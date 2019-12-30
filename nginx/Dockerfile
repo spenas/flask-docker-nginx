@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM alpine:3.10.3
 
 LABEL MAINTAINER="Santiago Peña <spenas@unal.edu.co>"
 
