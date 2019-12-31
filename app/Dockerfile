@@ -1,4 +1,4 @@
-FROM python:3.7-alpine3.10
+FROM python:3.6.10-alpine3.11
 
 LABEL MAINTAINER="Santiago Peña <spenas@unal.edu.co>"
 
