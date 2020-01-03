@@ -11,7 +11,7 @@ def create_app():
     app = Flask(__name__, instance_relative_config=False)
     app.config.from_object('config.Config')
     DATABASE_NAME = os.environ.get("MONGODB_DATABASE", 'flasky')
-    application.config["MONGO_URI"] =  'mongodb://' + os.environ['MONGODB_USERNAME'] + ':' + os.environ['MONGODB_PASSWORD'] + '@' + os.environ['MONGODB_HOSTNAME'] + ':27017/' + os.environ['MONGODB_DATABASE']
+    app.config["MONGO_URI"] =  'mongodb://' + os.environ['MONGODB_USERNAME'] + ':' + os.environ['MONGODB_PASSWORD'] + '@' + os.environ['MONGODB_HOSTNAME'] + ':27017/' + os.environ['MONGODB_DATABASE']
 
     #initialize plugins
     mongo.init_app(app = app)
@@ -20,4 +20,4 @@ def create_app():
     with app.app_context():
         from . import views
 
-    return app
+        return app
