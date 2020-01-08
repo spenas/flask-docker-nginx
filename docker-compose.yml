@@ -14,8 +14,8 @@ services:
       APP_DEBUG: "True"
       APP_PORT: 5000
       MONGODB_DATABASE: flasky
-      MONGODB_USERNAME: flaskuser
-      MONGODB_PASSWORD: hola123
+      # MONGODB_USERNAME: flaskuser
+      # MONGODB_PASSWORD: hola123
       MONGODB_HOSTNAME: mongodb
     volumes:
       - appdata:/var/www
@@ -29,14 +29,14 @@ services:
     image: mongo:4.0.8
     container_name: mongodb
     restart: unless-stopped
-    command: mongod --auth
+    command: mongod 
     environment:
-      MONGO_INITDB_ROOT_USERNAME: mongodbuser
-      MONGO_INITDB_ROOT_PASSWORD: hola123
-      MONGO_INITDB_DATABASE: flasky
+      # MONGO_INITDB_ROOT_USERNAME: mongodbuser
+      # MONGO_INITDB_ROOT_PASSWORD: hola123
+      # MONGO_INITDB_DATABASE: flasky
       MONGODB_DATABASE: flasky
-      MONGODB_USER: flaskuser
-      MONGODB_PASS: hola123
+      # MONGODB_USER: flaskuser
+      # MONGODB_PASS: hola123
       MONGODB_DATA_DIR: /data/db
       MONDODB_LOG_DIR: /dev/null
     volumes:
